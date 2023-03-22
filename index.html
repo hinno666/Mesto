@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Instagram</title>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="container">
+          <div class="header__logo"><img src="img/logo.svg" alt="logo" /></div>
+        </div>
+      </header>
+      <main class="main">
+        <div class="container">
+          <section class="profile">
+            <img src="img/avatar.jpg" alt="profile__avatar" />
+            <div class="profile__container">
+              <div class="profile__user-information">
+                <div class="profile__title-container">
+                  <h1 class="profile__title">Жак-Ив Кусто</h1>
+                  <button class="profile__edit-button" type="button">
+                    <i class="fa-sharp fa-regular fa-pen-to-square"></i>
+                  </button>
+                </div>
+                <p class="profile__subtitle">Исследователь океана</p>
+              </div>
+              <button class="profile__add-button" type="button">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </section>
+          <section class="cards">
+            <ul class="cards__list">
+            </ul>
+          </section>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="container">
+          <h2 class="footer__caption">© 2020 Mesto Russia</h2>
+        </div>
+      </footer>
+    </div>
+    <!--POPUP-->
+
+    <div class="popup popup_user_info">
+      <div class="popup__container">
+        <button class="popup__close-button" type="button"><img src="img/closebtn.svg" alt="close"></button>
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form name="popup-edit-form" class="popup__input-list" novalidate>
+          <label class="popup__field">
+            <input
+              required
+              id="name-input"
+              name="userName"
+              class="popup__input"
+              type="text"
+              placeholder="Имя"
+              minlength="2"
+              maxlength="40"
+            />
+          </label>
+          <label class="popup__field">
+            <input
+              required
+              id="about-input"
+              name="userAbout"
+              class="popup__input"
+              type="text"
+              placeholder="О себе"
+              minlength="2"
+              maxlength="200"
+            />
+          </label>
+          <button class="popup__save-button" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
+
+    <!--POPUP 2-->
+      <div class="popup popup_type_cards">
+      <div class="popup__container">
+        <button class="popup__close-button" type="button"><img src="img/closebtn.svg" alt="close"></button>
+        <h3 class="popup__title">Новое место</h3>
+        <form name="popup-adding-cards-form" class="popup__input-list" novalidate>
+          <label class="popup__field">
+            <input required
+            id="place-input"
+            name="cardName"
+            class="popup__input"
+            type="text"
+            placeholder="Название"
+            minlength="2" maxlength="40"
+            >
+          </label>
+          <label class="popup__field">
+            <input required
+            id="url-input"
+            name="cardLink"
+            class="popup__input"
+            type="url"
+            placeholder="Ссылка на картинку"
+            >
+          </label>
+          <button id="save-card-button" class="popup__save-button" type="submit">Создать</button>
+        </form>
+      </div>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/e5c25d5a77.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

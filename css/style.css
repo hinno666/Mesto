@@ -1,0 +1,374 @@
+/*Обнуление*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{
+	outline: none;
+}
+
+a:focus,a:active{
+	outline: none;
+}
+
+nav,footer,header,aside{
+	display: block;
+}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 136.7%;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+input,button,textarea{
+	font-family:inherit;
+}
+
+input::-ms-clear{
+	display: none;
+}
+
+button{
+	cursor: pointer;
+    background: transparent;
+}
+
+button::-moz-focus-inner {
+	padding:0;
+	border:0;
+}
+
+a, a:visited{
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+ul li{
+	list-style: none;
+}
+
+img{
+	vertical-align: top;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-size:inherit;
+	font-weight: 400;}
+/*--------------------*/
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #000;
+    color: #fff;
+    height: 100%;
+}
+
+.page {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 910px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header__logo {
+    padding: 45px 0;
+    border-bottom: 1px solid #545454;
+    width: 100%;
+}
+
+.main {
+    margin-top: 40px;
+    flex: 1 1 auto;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+.profile img{
+border-radius: 50%;
+}
+
+.profile__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.profile__title-container {
+   display: flex;
+   gap: 18px;
+}
+.profile__title {
+    font-size: 42px;
+    line-height: 20px;
+    margin-bottom: 16px;
+}
+.profile__edit-button{
+    background: transparent;
+    color: #fff;
+    font-size: 20px;
+    width: 25px;
+    height: 25px;
+}
+.profile__subtitle {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 50px;
+}
+.profile__add-button {
+    background: transparent;
+    border: 2px white solid;
+    color: #fff;
+    font-size: 25px;
+    width: 150px;
+    height: 50px;
+}
+
+/* CARDS BLOCK */
+
+.cards {
+}
+.cards__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 17px; 
+}
+.card__item {
+    background: #fff;
+    width: 282px;
+    color: #000;
+    border-radius: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+.card__image {
+  width: 282px;
+  height: 282px;
+  object-fit: cover;
+}
+.card__description {
+    display: flex;
+  justify-content: space-between;
+  margin: 23px 20px 27px 20px;
+}
+.card__trash-button {
+}
+
+.card__title {
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 225px;
+}
+.card__like-button {
+    background: transparent; 
+    width: 24px;
+    height: 19px;
+    border: none;
+    margin-top: 6px;
+    cursor: pointer; 
+}
+
+/* HOVERS AND ACTOVE EFFECTS */
+
+.card__like-button:hover {
+  opacity: .5;
+}
+.profile__add-button:hover {
+    opacity: 0.5;
+}
+.profile__edit-button:hover {
+    opacity: 0.5;
+}
+
+/*================================*/
+
+
+.footer {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #545454;
+    padding: 50px 0;
+}
+
+.popup {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #000;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.5s linear;
+}
+
+.popup_opened {
+    visibility: visible;
+    opacity: 1;
+  }
+
+.popup__close-button {
+  position: relative;
+  top: -40px;
+  right: -438px;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  background-image: url(../../../images/Close-Icon.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.popup__close-button:hover {
+  opacity: .6;
+}
+
+.popup__container {
+  width: 430px;
+  background-color: #fff;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, .15);
+  position: relative;
+}
+
+.popup__save-button {
+  min-height: 50px;
+  max-width: 358px;
+  background-color: #000;
+  text-align: center;
+  color: #fff;
+  font-family: "Inter", "Arial", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 46px;
+  margin-bottom: 37px;
+  margin-top: 22px;
+  cursor: pointer;
+  border-radius: 2px;
+  border: none;
+}
+
+.popup__save-button:hover {
+  opacity: 0.8;
+}
+
+.popup__input-list {
+  margin: 0 auto;
+  max-width: 358px;
+  min-height: 251px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.popup__input {
+  min-width: 358px;
+  min-height: 27px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.popup__title {
+  color: #000;
+  font-family: "Inter", "Arial", serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  margin: 0 64px 44px 36px;
+}
+
+@media(max-width: 910px) {
+  .profile {
+    flex-direction: column;
+  }
+  .profile__container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .profile__user-information {
+    margin-bottom: 40px;
+  }
+  .profile__add-button {
+    width: 100%;
+  }
+  .cards__list {
+    justify-content: center;
+  }
+}
+
+@media(max-width: 600px) {
+  .profile__title {
+    text-align: center;
+    font-size: 27px;
+  }
+  .profile__subtitle {
+    font-size: 14px;
+  }
+  .popup__container {
+    width: 282px;
+  }
+  .popup__close-button {
+    width: 15px;
+    height: 15px;
+    top: -40px;
+    right: -262px;
+  }
+  .popup__input-list {
+    max-width: 238px;
+  }
+  .popup__input {
+    min-width: 238px;
+  }
+   .popup__save-button {
+    margin-top: 18px;
+    margin-bottom: 22px;
+    max-width: 238px;
+    min-height: 46px;
+    font-size: 14px;
+  }
+}
