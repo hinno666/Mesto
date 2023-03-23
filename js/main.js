@@ -69,16 +69,15 @@ popupImageOpen.addEventListener("click", () => {
 //CARDS
 const popupInputCard = document.querySelector(".popup_type_cards");
 const cardTitle = document.querySelector(".card__title");
-const cardImage = document.querySelector('.card__item img')
-console.log(cardImage);
+const cardImage = document.querySelector(".card__item img");
 const cardTitleInput = document.querySelector("#place-input");
-const urlCardInput = document.querySelector('#url-input');
+const urlCardInput = document.querySelector("#url-input");
 const cardParent = document.querySelector(".cards__list");
 
 const initialCards = [
   {
-    name: "Архыз",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
+    name: "Тула",
+    link: "https://sun9-50.userapi.com/owLM-_aDNKSjaHUynngmZMTTb4acPTfCnfuXdw/433857lYcT0.jpg",
   },
   {
     name: "Челябинская область",
@@ -103,30 +102,31 @@ const initialCards = [
 ];
 
 function createNewCard(item) {
-    const card = cardParent.innerHTML = `
-     <li class="card__item">
-                <img
-                  class="card__image"
-                  src="${item.link}"
-                  alt="${item.name}"
-                />
-                <div class="card__description">
-                  <h2 class="card__title">${item.name}</h2>
-                  <button class="card__like-button" type="button">
-                    <img src="img/like.svg" alt="like" />
-                  </button>
-                </div>
-              </li>
-    `;
+  const card = document.createElement("li");
+  card.innerHTML = `
+<li class="card__item">
+<img
+class="card__image"
+src="${item.link}"
+alt="${item.name}"
+/>
+<div class="card__description">
+<h2 class="card__title">${item.name}</h2>
+<button class="card__like-button" type="button">
+<img src="img/like.svg" alt="like" />
+</button>
+</div>
+</li>
+`;
 
-    return card;
-};
+  return card;
+}
 
 function renderNewCard(item) {
-    item.forEach((items) => {
-        cardParent.append(createNewCard(items));
-    })
-};
+  item.forEach((items) => {
+    cardParent.append(createNewCard(items));
+  });
+}
 
 renderNewCard(initialCards);
 
